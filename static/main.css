@@ -1,0 +1,78 @@
+.remoteBody {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 325px;
+    height: 685px;
+    margin: auto;
+    display: block;
+    position: relative;
+}
+
+.startCol {
+    position: relative;
+    left: 25px;
+}
+
+.oneCol {
+    margin-left: 25px;
+    width: 50px;
+    display: inline-block;
+}
+
+.twoCol {
+    margin-left: 25px;
+    width: 125px;
+    display: inline-block;
+}
+
+.threeCol {
+    margin-left: 25px;
+    width: 200px;
+    display: inline-block;
+}
+
+.fourCol {
+    margin-left: 25px;
+    width: 275px;
+    display: inline-block;
+}
+
+.oneRow {
+    margin-top: 15px;
+    height: 45px;
+}
+.twoRow {
+    margin-top: 15px;
+    height: 105px;
+}
+.threeRow {
+    margin-top: 15px;
+    height: 165px;
+}
+.fourRow {
+    margin-top: 15px;
+    height: 225px;
+}
+.fiveRow {
+    margin-top: 15px;
+    height: 285px;
+}
+
+.section {
+    background-color: darkgray;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 7px 15px 8px;
+}
+
+p {
+    font-size: 3px;
+    margin: 0px 0px 0px;
+}

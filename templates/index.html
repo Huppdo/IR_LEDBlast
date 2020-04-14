@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+    <title>IR Blaster Software</title>
+</head>
+<body>
+    <div class="remoteBody">
+        <div class="twoCol oneRow section">
+            <span id="BRIGHT_UP" onclick="remote(this.id)" class="circle" style="background-color: white; text-align: center"></span>
+            <span id="BRIGHT_DOWN" onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+        </div>
+        <div class="twoCol oneRow section">
+            <span onclick="remote(this.id)" class="circle" style="background-color: black"></span>
+            <span id="POWER" onclick="remote(this.id)" class="circle" style="background-color: red"></span>
+        </div>
+        <div class="fourCol fiveRow section">
+            <span id="RED" onclick="remote(this.id)" class="circle" style="background-color: red"></span>
+            <span id="GREEN" onclick="remote(this.id)" class="circle" style="background-color: green"></span>
+            <span id="BLUE" onclick="remote(this.id)" class="circle" style="background-color: blue"></span>
+            <span id="WHITE" onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span id="ORANGE" onclick="remote(this.id)" class="circle" style="background-color: goldenrod"></span>
+            <span id="PEA_GREEN" onclick="remote(this.id)" class="circle" style="background-color: lime"></span>
+            <span id="DARK_BLUE" onclick="remote(this.id)" class="circle" style="background-color: royalblue"></span>
+            <span id="WHITE_1" onclick="remote(this.id)" class="circle" style="background-color: pink"></span>
+            <span id="DARK_YELLOW" onclick="remote(this.id)" class="circle" style="background-color: orange"></span>
+            <span id="SKY_BLUE" onclick="remote(this.id)" class="circle" style="background-color: deepskyblue"></span>
+            <span id="PURPLE" onclick="remote(this.id)" class="circle" style="background-color: purple"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: pink"></span>
+            <span id="YELLOW" onclick="remote(this.id)" class="circle" style="background-color: coral"></span>
+            <span id="LIGHT_BLUE" onclick="remote(this.id)" class="circle" style="background-color: cornflowerblue"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: #aa108b"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: powderblue"></span>
+            <span id="STRAW_YELLOW" onclick="remote(this.id)" class="circle" style="background-color: yellow"></span>
+            <span id="CYAN" onclick="remote(this.id)" class="circle" style="background-color: teal"></span>
+            <span id="PINK" onclick="remote(this.id)" class="circle" style="background-color: hotpink"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: powderblue"></span>
+        </div>
+        <div class="fourCol fourRow section">
+            <span id="RED" onclick="fade(this.id)" class="circle" style="background-image: linear-gradient(to bottom right, white, red)"></span>
+            <span id="GREEN" onclick="fade(this.id)" class="circle" style="background-image: linear-gradient(to bottom right, white, green)"></span>
+            <span id="BLUE" onclick="fade(this.id)" class="circle" style="background-image: linear-gradient(to bottom right, white, blue)"></span>
+            <span id="WHITE" onclick="fade(this.id)" class="circle" style="background-image: linear-gradient(to bottom right, #303030, white)"></span>
+            <span id="ORANGE" onclick="fade(this.id)" class="circle" style="background-image: linear-gradient(to bottom right, white, ORANGE)"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span id="WHITE_1" onclick="fade(this.id)" class="circle" style="background-image: linear-gradient(to bottom right, #303030, white)"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+        </div>
+        <div class="fourCol oneRow section">
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+            <span onclick="remote(this.id)" class="circle" style="background-color: white"></span>
+        </div>
+    </div>
+</body>
+<script>
+    function remote(id){
+        const Http = new XMLHttpRequest();
+        const url='/trigger?cmd='+id;
+        Http.open("POST", url, true);
+        Http.withCredentials = true;
+        Http.send();
+    }
+    function fade(id){
+        const Http = new XMLHttpRequest();
+        const url='/fade?cmd='+id;
+        Http.open("POST", url, true);
+        Http.withCredentials = true;
+        Http.send();
+    }
+</script>
+</html>
